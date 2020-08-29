@@ -13,6 +13,8 @@ if [ "$system_type" = "Linux" ] || [ "$system_type" = "WSL1" ] || [ "$system_typ
     echo "Installing zsh..."
     sudo apt install zsh -y
     chsh -s $(which zsh)
+  fi
+
   if [ ! -f ${HOME}/.zplug/init.zsh ]; then
     echo "Installing zplug..."
     # curl -sL --proto-redir -all,https https://cdn.jsdelivr.net/gh/zplug/installer/installer.zsh | zsh
