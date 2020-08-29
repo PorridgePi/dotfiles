@@ -20,6 +20,8 @@ if [ "$system_type" = "Linux" ] || [ "$system_type" = "WSL1" ] || [ "$system_typ
   else
     echo "All packages are installed."
   fi
+fi
+
 if [ "$system_type" = "WSL1" ] || [ "$system_type" = "WSL1" ] ; then
   # config WSL git authorisation
   if [ ! -f /usr/bin/git-credential-manager ] ; then
