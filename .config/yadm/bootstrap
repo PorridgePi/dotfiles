@@ -1,8 +1,13 @@
 #!/bin/sh
+if grep -q Microsoft /proc/version ; then
+  system_type="WSL1"
+elif grep -q microsoft /proc/version ; then
+  system_type="WSL2"
+else
+  system_type=$(uname -s)
+fi
 
-system_type=$(uname -s)
-
-if [ "$system_type" = "Linux" ]; then
+if [ "$system_type" = "Linux" ] || [ "$system_type" = "WSL1" ] || [ "$system_type" = "WSL2" ]; then
   # install zsh, zplug, neovim
   if ! command -v zsh > /dev/null 2>&1; then
     echo "Installing zsh..."

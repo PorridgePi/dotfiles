@@ -1,3 +1,6 @@
 [user]
 	email = www.kunbao2006@gmail.com
 	name = PorridgePi
+[credential]
+	helper = manager
+
