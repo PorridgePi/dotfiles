@@ -1,0 +1,18 @@
+#!/bin/sh
+
+system_type=$(uname -s)
+
+if [ "$system_type" = "Linux" ]; then
+  # install zsh, zplug, neovim
+  if ! command -v zsh > /dev/null 2>&1; then
+    echo "Installing zsh..."
+    sudo apt install zsh -y
+    chsh -s $(which zsh)
+  elif [ ! -f ${HOME}/.zplug/init.zsh ]; then
+    echo "Installing zplug..."
+    # curl -sL --proto-redir -all,https https://cdn.jsdelivr.net/gh/zplug/installer/installer.zsh | zsh
+    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+  else
+    echo "All packages are installed."
+  fi
+fi
