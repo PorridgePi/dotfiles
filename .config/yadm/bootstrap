@@ -25,9 +25,9 @@ if [ "$system_type" = "Linux" ] || [ "$system_type" = "WSL1" ] || [ "$system_typ
 fi
 
 if [ "$system_type" = "WSL1" ] || [ "$system_type" = "WSL2" ] ; then
-  echo "Fixing git cred on WSL""Fixing git cred on WSL"
   # config WSL git authorisation
   if [ ! -f /usr/bin/git-credential-manager ] ; then
+    echo "Fixing git cred on WSL"
     echo '#!/bin/sh \nexec "/mnt/d/AppData/scoop/apps/git/current/mingw64/libexec/git-core/git-credential-manager.exe" $@' | sudo tee /usr/bin/git-credential-manager
     sudo chmod +x /usr/bin/git-credential-manager
     echo "added windows git cred manager"
