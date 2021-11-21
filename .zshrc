@@ -56,3 +56,6 @@ zinit light zsh-users/zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 export HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true
+
+# zsh-syntax-highlighting
+zinit light zsh-users/zsh-syntax-highlighting
