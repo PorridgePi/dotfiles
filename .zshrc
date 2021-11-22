@@ -46,6 +46,10 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
+# Case-insensitive autocomplete
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+autoload -Uz compinit && compinit
+
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
