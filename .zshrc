@@ -37,6 +37,13 @@ export PATH="$HOME/bin:$PATH"
 export TERM=xterm-256color
 eval $(thefuck --alias)
 
+### Aliases
+# Python
+alias python='python3'
+alias pip='pip3'
+# Intel (Rosetta 2) Homebrew
+alias ibrew='arch -x86_64 /usr/local/bin/brew'
+
 # Case-insensitive autocomplete
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 autoload -Uz compinit && compinit
