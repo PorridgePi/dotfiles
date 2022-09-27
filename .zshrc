@@ -7,6 +7,8 @@ fi
 
 export PATH="$HOME/bin:$PATH"
 
+export TERM=xterm-256color
+
 eval $(thefuck --alias)
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
