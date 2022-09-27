@@ -41,8 +41,6 @@ eval $(thefuck --alias)
 # Python
 alias python='python3'
 alias pip='pip3'
-# Intel (Rosetta 2) Homebrew
-alias ibrew='arch -x86_64 /usr/local/bin/brew'
 
 # Case-insensitive autocomplete
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
@@ -61,6 +59,21 @@ zinit light zsh-users/zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 export HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true
+
+########## OS-Specific ########################################################
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    ##### Linux
+
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    ##### macOS
+    ### Aliases
+    # Intel (Rosetta 2) Homebrew
+    alias ibrew='arch -x86_64 /usr/local/bin/brew'
+else
+    ##### Unknown
+
+fi
 
 
 ########## pnpm ###############################################################
