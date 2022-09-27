@@ -46,6 +46,7 @@ alias pip='pip3'
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 autoload -Uz compinit && compinit
 
+# Powerlevel10k
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # zsh-autosuggestions
