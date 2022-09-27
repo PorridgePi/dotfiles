@@ -77,6 +77,9 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     ### Aliases
     # Intel (Rosetta 2) Homebrew
     alias ibrew='arch -x86_64 /usr/local/bin/brew'
+
+    # Homebrew
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 else
     ##### Unknown
 
