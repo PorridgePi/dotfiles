@@ -56,6 +56,11 @@ bindkey '^[[B' history-substring-search-down
 export HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true
 
 
+########## pnpm ###############################################################
+export PNPM_HOME="/Users/porridge/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
+
 ########## Powerlevel10k ######################################################
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
