@@ -41,6 +41,10 @@ eval $(thefuck --alias)
 # Python
 alias python='python3'
 alias pip='pip3'
+# ls
+alias ls='ls --color=auto'
+alias la='ls --color=auto -A'
+alias ll='ls --color=auto -laF'
 
 # Case-insensitive autocomplete
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
