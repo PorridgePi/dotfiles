@@ -10,6 +10,7 @@ if [[ "$OSNAME" == "Linux" ]]; then
         echo 'ERROR: Unknown distro'
         echo 'Exiting...'
         exit 1
+    fi
 elif [[ "$OSNAME" == "macOS" ]]; then
     # macOS
     brew install lsd
