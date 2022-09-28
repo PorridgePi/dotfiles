@@ -5,7 +5,10 @@ if ! command -v lsd &> /dev/null; then
         # Linux
         if [[ "$DISTRO_TYPE" == "debian" ]]; then
             # Debian-based
-            URL=$(curl -s https://api.github.com/repos/Peltoche/lsd/releases/latest | grep browser_download_url | cut -d '"' -f 4 | grep $(uname -m) | grep -v musl)
+            if [[ "$ARCH" == "aarch64" ]]; then
+                ARCH=arm64
+            fi
+            URL=$(curl -s https://api.github.com/repos/Peltoche/lsd/releases/latest | grep browser_download_url | cut -d '"' -f 4 | grep $ARCH | grep -v musl)
             curl -o /temp/lsd.deb "$URL"
             sudo dpkg -i /temp/lsd.deb
         else
