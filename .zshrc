@@ -67,6 +67,25 @@ zinit light-mode for \
 ### End of Zinit's installer chunk
 
 
+########## Personal - OS-Specific #############################################
+
+if [[ "$OSNAME" == "Linux" ]]; then
+    ##### Linux
+
+elif [[ "$OSNAME" == "macOS" ]]; then
+    ##### macOS
+    ### Aliases
+    # Intel (Rosetta 2) Homebrew
+    alias ibrew='arch -x86_64 /usr/local/bin/brew'
+
+    # Homebrew
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+    ##### Unknown
+
+fi
+
+
 ########## Personal ###########################################################
 export PATH="$HOME/bin:$PATH"
 export TERM=xterm-256color
@@ -101,24 +120,6 @@ zinit light zsh-users/zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 export HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true
-
-########## OS-Specific ########################################################
-
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    ##### Linux
-
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-    ##### macOS
-    ### Aliases
-    # Intel (Rosetta 2) Homebrew
-    alias ibrew='arch -x86_64 /usr/local/bin/brew'
-
-    # Homebrew
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-else
-    ##### Unknown
-
-fi
 
 
 ########## pnpm ###############################################################
