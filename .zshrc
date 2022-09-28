@@ -52,6 +52,8 @@ else
     VER=$(uname -r)
 fi
 
+export OSNAME DISTRO DISTRO_TYPE VER
+
 
 ########## Zinit ##############################################################
 ### Added by Zinit's installerW
