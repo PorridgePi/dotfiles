@@ -52,7 +52,9 @@ else
     VER=$(uname -r)
 fi
 
-export OSNAME DISTRO DISTRO_TYPE VER
+ARCH=$(uname -m)
+
+export OSNAME DISTRO DISTRO_TYPE VER ARCH
 
 
 ########## Zinit ##############################################################
