@@ -31,6 +31,17 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         DISTRO=$(uname -s)
         VER=$(uname -r)
     fi
+
+    if command -v dpkg &> /dev/null; then
+        # Debian-based
+        DISTRO_TYPE=debian
+    elif command -v yum &> /dev/null; then
+        # RPM-based
+        DISTRO_TYPE=rpm
+    elif command -v pacman &> /dev/null; then
+        # Arch-based
+        DISTRO_TYPE=arc
+    fi
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     # macOS
     OSNAME=macOS
