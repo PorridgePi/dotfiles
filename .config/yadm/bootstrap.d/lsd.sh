@@ -12,6 +12,7 @@ if ! command -v lsd &> /dev/null; then
             mkdir -p ~/.temp
             curl -o ~/.temp/lsd.deb "$URL"
             sudo dpkg -i ~/.temp/lsd.deb
+            rm ~/.temp/lsd.deb
         else
             # Unknown distro
             echo 'ERROR: Unknown distro'
