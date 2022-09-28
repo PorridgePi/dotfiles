@@ -111,9 +111,9 @@ eval $(thefuck --alias)
 alias python='python3'
 alias pip='pip3'
 # ls
-alias ls='ls --color=auto'
-alias la='ls --color=auto -A'
-alias ll='ls --color=auto -laF'
+alias ls='lsd --color auto'
+alias la='lsd --color auto -A'
+alias ll='lsd --color auto -laF'
 # Docker Compose
 alias dc='docker-compose'
 
