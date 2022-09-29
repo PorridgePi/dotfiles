@@ -2,12 +2,12 @@ if ! command -v librespeed-cli &> /dev/null; then
     echo 'Installing librespeed-cli'
 
     source $HOME/.zshenv
+    if [[ "$ARCH" == "aarch64" ]]; then
+        ARCH=arm64
+    fi
 
     if [[ "$OSNAME" == "Linux" ]]; then
         # Linux
-        if [[ "$ARCH" == "aarch64" ]]; then
-            ARCH=arm64
-        fi
         URL=$(curl -fsSL https://api.github.com/repos/librespeed/speedtest-cli/releases/latest | grep browser_download_url | cut -d '"' -f 4 | grep linux | grep $ARCH)
         mkdir -p $HOME/.temp/librespeed
         curl -fsSL -o $HOME/.temp/librespeed/librespeed.tar.gz "$URL"
