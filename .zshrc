@@ -52,7 +52,7 @@ fi
 
 
 ########## Personal ###########################################################
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin:$HOME/bin/external:$PATH"
 export TERM=xterm-256color
 eval $(thefuck --alias)
 
