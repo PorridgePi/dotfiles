@@ -64,6 +64,9 @@ alias pip='pip3'
 alias ls='lsd --color auto'
 alias la='lsd --color auto -A'
 alias ll='lsd --color auto -laF'
+function lst { ls --tree --depth ${1:-2} }
+function lat { la --tree --depth ${1:-2} }
+function llt { la --tree --depth ${1:-2} }
 # Docker Compose
 alias dc='docker-compose'
 
