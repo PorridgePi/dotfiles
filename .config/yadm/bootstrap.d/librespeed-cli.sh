@@ -5,26 +5,23 @@ if ! command -v librespeed-cli &> /dev/null; then
 
     if [[ "$OSNAME" == "Linux" ]]; then
         # Linux
-        if [[ "$DISTRO_TYPE" == "debian" ]]; then
-            # Debian-based
-            if [[ "$ARCH" == "aarch64" ]]; then
-                ARCH=arm64
-            fi
-            URL=$(curl -fsSL https://api.github.com/repos/librespeed/speedtest-cli/releases/latest | grep browser_download_url | cut -d '"' -f 4 | grep linux | grep $ARCH)
-            mkdir -p $HOME/.temp/librespeed
-            curl -fsSL -o $HOME/.temp/librespeed/librespeed.tar.gz "$URL"
-            tar -xzf $HOME/.temp/librespeed/librespeed.tar.gz -C $HOME/.temp/librespeed/
-            cp $HOME/.temp/librespeed/librespeed-cli $HOME/bin/external/
-            rm -r $HOME/.temp/librespeed/
-        else
-            # Unknown distro
-            echo 'ERROR: Unknown distro'
-            echo 'Exiting...'
-            exit 1
+        if [[ "$ARCH" == "aarch64" ]]; then
+            ARCH=arm64
         fi
+        URL=$(curl -fsSL https://api.github.com/repos/librespeed/speedtest-cli/releases/latest | grep browser_download_url | cut -d '"' -f 4 | grep linux | grep $ARCH)
+        mkdir -p $HOME/.temp/librespeed
+        curl -fsSL -o $HOME/.temp/librespeed/librespeed.tar.gz "$URL"
+        tar -xzf $HOME/.temp/librespeed/librespeed.tar.gz -C $HOME/.temp/librespeed/
+        cp $HOME/.temp/librespeed/librespeed-cli $HOME/bin/external/
+        rm -r $HOME/.temp/librespeed/
     elif [[ "$OSNAME" == "macOS" ]]; then
         # macOS
-        exit 1
+        URL=$(curl -fsSL https://api.github.com/repos/librespeed/speedtest-cli/releases/latest | grep browser_download_url | cut -d '"' -f 4 | grep darwin | grep $ARCH)
+        mkdir -p $HOME/.temp/librespeed
+        curl -fsSL -o $HOME/.temp/librespeed/librespeed.tar.gz "$URL"
+        tar -xzf $HOME/.temp/librespeed/librespeed.tar.gz -C $HOME/.temp/librespeed/
+        cp $HOME/.temp/librespeed/librespeed-cli $HOME/bin/external/
+        rm -r $HOME/.temp/librespeed/
     else
         # Unknown
         echo 'ERROR: Unknown OS'
