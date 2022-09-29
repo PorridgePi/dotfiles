@@ -1,6 +1,8 @@
 if ! command -v lsd &> /dev/null; then
     echo 'Installing lsd'
 
+    source $HOME/.zshenv
+
     if [[ "$OSNAME" == "Linux" ]]; then
         # Linux
         if [[ "$DISTRO_TYPE" == "debian" ]]; then
