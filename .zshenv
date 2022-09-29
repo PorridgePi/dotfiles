@@ -31,7 +31,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         DISTRO_TYPE=rpm
     elif command -v pacman &> /dev/null; then
         # Arch-based
-        DISTRO_TYPE=arc
+        DISTRO_TYPE=arch
     fi
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     # macOS
