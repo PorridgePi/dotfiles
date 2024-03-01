@@ -47,4 +47,5 @@ ARCH=$(uname -m)
 
 export OSNAME DISTRO DISTRO_TYPE VER ARCH
 
-
+# Rust
+. "$HOME/.cargo/env"
