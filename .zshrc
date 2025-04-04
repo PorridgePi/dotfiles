@@ -42,9 +42,19 @@ elif [[ "$OSNAME" == "macOS" ]]; then
     ### Aliases
     # Intel (Rosetta 2) Homebrew
     alias ibrew='arch -x86_64 /usr/local/bin/brew'
+    # Tailscale
+    alias tailscale=/Applications/Tailscale.app/Contents/MacOS/Tailscale
+
+    # Start ActivityWatch
+    alias startaw="if ! pgrep aw-watcher-window-macos; then; /Applications/ActivityWatch.app/Contents/MacOS/aw-watcher-window --verbose > /dev/null 2>&1 &; fi"
+    # Reset Carbon Copy Cloner v7 Trial
+    alias resetccc="defaults delete com.bombich.ccc TrialExpirationV7"
+    # Connect to pdlp@SSOE2023 hidden Wi-Fi
+    alias pdlp="networksetup -setairportnetwork en0 'pdlp@SSOE2023' 'mbByF6p@YA#RPgH8LY!k'"
 
     # Homebrew
     eval "$(/opt/homebrew/bin/brew shellenv)"
+
 else
     ##### Unknown
 
@@ -55,6 +65,8 @@ fi
 export PATH="$HOME/bin:$HOME/bin/external:$PATH"
 export TERM=xterm-256color
 eval $(thefuck --alias)
+# Git UTF-8
+export LESSCHARSET=utf-8
 
 ### Aliases
 # Python
@@ -94,11 +106,12 @@ export HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true
 export PNPM_HOME="/Users/porridge/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
+########## pipx ###############################################################
+export PATH="$PATH:/Users/porridge/.local/bin"
 
 ########## Powerlevel10k ######################################################
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 
 ########## SDKMAN! ############################################################
 # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
